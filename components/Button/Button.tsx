@@ -4,7 +4,10 @@ import cn from 'classnames';
 
 export const Button = ({children, appearance}: ButtonProps): JSX.Element => {
     return (
-        <button className={styles.button} >
+        <button className={cn(styles.button, {
+            [styles.primary]: appearance == 'primary',
+            [styles.ghost]: appearance == 'ghost',
+        })} >
             {children}
             
         </button>
